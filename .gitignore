@@ -1,0 +1,21 @@
+# 基础忽略规则
+*.pyc
+*.log
+*.tmp
+*.bak
+__pycache__/
+venv/
+.env
+.DS_Store
+
+# 项目特定忽略
+*config.json             # 本地配置文件
+*.mp3                   # 语音文件
+*.wav
+*.ogg
+*.log
+*.db
+*user_datas.pkl
+# IDE相关
+.idea/
+.vscode/ 
