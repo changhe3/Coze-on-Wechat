@@ -44,7 +44,7 @@ def run():
         sigterm_handler_wrap(signal.SIGTERM)
 
         # create channel
-        channel_name = conf().get("channel_type", "wx")
+        channel_name = conf().get("channel_type", "gewechat")
 
         if "--cmd" in sys.argv:
             channel_name = "terminal"

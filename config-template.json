@@ -1,18 +1,18 @@
 {
-  "channel_type": "wx",
-  "model": "",
-  "open_ai_api_key": "YOUR API KEY",
-  "claude_api_key": "YOUR API KEY",
-  "text_to_image": "dall-e-2",
-  "voice_to_text": "openai",
-  "text_to_voice": "openai",
-  "proxy": "",
-  "hot_reload": false,
+  "channel_type": "gewechat",
+  "model": "coze",
+  "coze_api_base": "YOUR API KEY",
+  "coze_api_key": "YOUR API KEY",
+  "coze_bot_id": "",    
+  "coze_voice_id": "", 
+  "coze_space_id": "",
   "single_chat_prefix": [
     "bot",
     "@bot"
   ],
+  
   "single_chat_reply_prefix": "[bot] ",
+
   "group_chat_prefix": [
     "@bot"
   ],
@@ -20,18 +20,15 @@
     "ChatGPT测试群",
     "ChatGPT测试群2"
   ],
-  "image_create_prefix": [
-    "画"
-  ],
-  "speech_recognition": true,
+
+  "speech_recognition": false,
   "group_speech_recognition": false,
+  "text_to_voice": "coze",
   "voice_reply_voice": false,
-  "conversation_max_tokens": 2500,
-  "expires_in_seconds": 3600,
-  "character_desc": "你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。",
-  "temperature": 0.7,
-  "subscribe_msg": "感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。",
-  "use_linkai": false,
-  "linkai_api_key": "",
-  "linkai_app_code": ""
+
+  "gewechat_app_id": "",
+  "gewechat_base_url": "http://0.0.0.0:2531/v2/api",
+  "gewechat_callback_url": "http://0.0.0.0:9919/v2/api/callback/collect",
+  "gewechat_download_url": "http://0.0.0.0:2532/download",
+  "gewechat_token": ""
 }
