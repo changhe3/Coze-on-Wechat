@@ -13,3 +13,6 @@ uvicorn>=0.15.0
 python-multipart>=0.0.5
 dulwich
 dashscope
+ffmpeg
+ffmpeg-python
+pilk
