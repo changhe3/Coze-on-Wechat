@@ -1,0 +1,34 @@
+{
+  "channel_type": "gewechat",
+  "model": "coze",
+  "coze_api_base": "YOUR API KEY",
+  "coze_api_key": "YOUR API KEY",
+  "coze_bot_id": "",    
+  "coze_voice_id": "", 
+  "coze_space_id": "",
+  "single_chat_prefix": [
+    "bot",
+    "@bot"
+  ],
+  
+  "single_chat_reply_prefix": "[bot] ",
+
+  "group_chat_prefix": [
+    "@bot"
+  ],
+  "group_name_white_list": [
+    "ChatGPT测试群",
+    "ChatGPT测试群2"
+  ],
+
+  "speech_recognition": false,
+  "group_speech_recognition": false,
+  "text_to_voice": "coze",
+  "voice_reply_voice": false,
+
+  "gewechat_app_id": "",
+  "gewechat_base_url": "http://0.0.0.0:2531/v2/api",
+  "gewechat_callback_url": "http://0.0.0.0:9919/v2/api/callback/collect",
+  "gewechat_download_url": "http://0.0.0.0:2532/download",
+  "gewechat_token": ""
+}
