@@ -27,8 +27,7 @@ def sigterm_handler_wrap(_signo):
 
 def start_channel(channel_name: str):
     channel = channel_factory.create_channel(channel_name)
-    if channel_name in ["wx", "wxy", "terminal", "wechatmp","wechatmp_service", "wechatcom_app", "wework",
-                        "wechatcom_service", "gewechat", "web", const.FEISHU, const.DINGTALK]:
+    if channel_name in ["gewechat"]:
         PluginManager().load_plugins()
 
     channel.startup()
@@ -45,12 +44,6 @@ def run():
 
         # create channel
         channel_name = conf().get("channel_type", "gewechat")
-
-        if "--cmd" in sys.argv:
-            channel_name = "terminal"
-
-        if channel_name == "wxy":
-            os.environ["WECHATY_LOG"] = "warn"
 
         start_channel(channel_name)
 

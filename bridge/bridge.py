@@ -13,8 +13,8 @@ class Bridge(object):
     def __init__(self):
         self.btype = {
             "chat": const.COZE,
-            "voice_to_text": conf().get("voice_to_text", "pytts"),
-            "text_to_voice": conf().get("text_to_voice", "google")
+            "voice_to_text": conf().get("voice_to_text", "coze"),
+            "text_to_voice": conf().get("text_to_voice", "coze")
         }
 
         bot_type = conf().get("bot_type")

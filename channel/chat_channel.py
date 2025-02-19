@@ -233,8 +233,11 @@ class ChatChannel(Channel):
                 reply = super().build_reply_content(context.content, context)
             elif context.type == ContextType.ACCEPT_FRIEND:  # 好友申请，匹配字符串
                 reply = self._build_friend_request_reply(context)
+
             elif context.type == ContextType.SHARING:  # 分享信息，当前无默认逻辑
-                pass
+                context["channel"] = e_context["channel"]
+                reply = super().build_reply_content(context.content, context)
+                
             elif context.type == ContextType.FUNCTION or context.type == ContextType.FILE:  # 文件消息及函数调用等，当前无默认逻辑
                 #下载文件
                 if context.get("msg"):
