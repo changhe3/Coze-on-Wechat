@@ -82,23 +82,21 @@ class GeWeChatChannel(ChatChannel):
             self.app_id = app_id
 
         # 获取本机实际IP地址（需确保服务器有公网可达的IP）
-        def get_local_ip():
-            try:
-                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                s.connect(('8.8.8.8', 80))
-                ip = s.getsockname()[0]
-                s.close()
-                return ip
-            except:
-                return '0.0.0.0'
+        # def get_local_ip():
+        #     try:
+        #         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #         s.connect(('8.8.8.8', 80))
+        #         ip = s.getsockname()[0]
+        #         s.close()
+        #         return ip
+        #     except:
+        #         return '0.0.0.0'
 
-        # 自动生成正确的回调地址
-        local_ip = get_local_ip()
-        port = 9919  # 使用配置的端口或默认端口
-        callback_url = f"http://{local_ip}:{port}/v2/api/callback/collect"
-        conf().set("gewechat_callback_url", callback_url)
-        save_config()
-        logger.info(f"[gewechat] 自动生成回调地址: {callback_url}")
+        # # 自动生成正确的回调地址
+        # local_ip = get_local_ip()
+        # port = 9919  # 使用配置的端口或默认端口
+        callback_url = conf().get("gewechat_callback_url")
+        logger.info(f"[gewechat] 设置回调地址: {callback_url}")
         # 新FastAPI路由配置
         parsed_url = urlparse(callback_url)
         port = parsed_url.port
