@@ -72,7 +72,7 @@ class CozeBot(Bot):
             return json.dumps([{"type": "text", "text": context.content}]), None
         
         # 处理清除记忆指令
-        if context.type == ContextType.TEXT and "清楚记忆" in context.content:
+        if context.type == ContextType.TEXT and "清除记忆" in context.content:
             user_id = context["receiver"]
             if not user_id:
                 return None, Reply(ReplyType.TEXT, "用户ID获取失败")
