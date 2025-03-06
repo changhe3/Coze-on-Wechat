@@ -44,12 +44,12 @@ https://github.com/user-attachments/assets/e221d35b-e6bb-479c-9850-3c5d404511e5
 
 ```bash
 # 从阿里云镜像仓库拉取(国内)
-docker pull registry.cn-chengdu.aliyuncs.com/tu1h/wechotd:alpine
-docker tag registry.cn-chengdu.aliyuncs.com/tu1h/wechotd:alpine gewe
+docker pull registry.cn-hangzhou.aliyuncs.com/gewe/gewe:latest
+docker tag registry.cn-hangzhou.aliyuncs.com/gewe/gewe gewe
 
 # 创建数据目录并启动服务
-mkdir -p gewechat/data  
-docker run -itd -v ./gewechat/data:/root/temp -p 2531:2531 -p 2532:2532 --restart=always --name=gewe gewe
+mkdir -p /root/temp
+docker run -itd -v /root/temp:/root/temp -p 2531:2531 -p 2532:2532 --privileged=true --name=gewe gewe /usr/sbin/init
 ```
 
 
