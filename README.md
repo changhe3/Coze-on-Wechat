@@ -132,5 +132,7 @@ nohup python3 app.py & tail -f nohup.out  # 在后台运行程序并通过日志
 # 关闭
 pkill -f app.py
 ```
+[![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
+
 ## 联系我
 ![image](https://github.com/user-attachments/assets/d61764ec-c975-4b34-96c3-96bef668d67a)
