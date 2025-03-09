@@ -113,7 +113,7 @@ class CozeBot(Bot):
                             # 解析卡片信息
                             card_data = json.loads(messages.content)
                             info_str = card_data.get("info_in_card", "")
-                            print("info_str:", info_str)
+
                             # 解析键值对
                             info_dict = {}
                             for line in info_str.split('\n'):
