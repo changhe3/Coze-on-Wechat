@@ -66,12 +66,6 @@ cd Coze-on-wechat/
 pip3 install -r requirements.txt
 ```
 
-**(3) 拓展依赖 (可选，建议安装)：**
-
-```bash
-pip3 install -r requirements-optional.txt
-```
-> 如果某项依赖安装失败可注释掉对应的行再继续
 
 ## 3. 配置
 > 配置文件的模板在根目录的`config-template.json`中，需复制该模板创建最终生效的`config.json`文件：
