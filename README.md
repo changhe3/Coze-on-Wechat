@@ -31,6 +31,9 @@ https://github.com/user-attachments/assets/e221d35b-e6bb-479c-9850-3c5d404511e5
 
 ![image](https://github.com/user-attachments/assets/56934c06-64fd-43bf-8522-535edd5edfb0)
 
+# web 管理界面
+![image](https://github.com/user-attachments/assets/71638577-4a26-4138-ae03-e21e4c5435eb)
+![image](https://github.com/user-attachments/assets/225c699f-569b-40cf-865f-c98c5ab790c7)
 
 # 快速使用
 
@@ -66,66 +69,13 @@ cd Coze-on-wechat/
 pip3 install -r requirements.txt
 ```
 
+## 3. 运行
 
-## 3. 配置
-> 配置文件的模板在根目录的`config-template.json`中，需复制该模板创建最终生效的`config.json`文件：
 ```bash
-cp config-template.json config.json
+cd /web
+staremlit run Home.py 
 ```
-> 然后在`config.json`中填入配置，以下是对默认配置的说明，可根据需要进行自定义修改（请去掉注释）：
-```json
-{
-  // Bot 相关配置
-  "channel_type": "gewechat",
-  "model": "coze",
-  // coze 相关配置
-  "coze_api_base": "YOUR API KEY",
-  "coze_api_key": "YOUR API KEY",
-  "coze_bot_id": "",    //智能体ID。进入智能体的开发页面，开发页面 URL 中 bot 参数后的数字就是智能体ID。例如https://www.coze.cn/space/341****/bot/73428668*****，bot_id 为73428668*****。
-  "coze_voice_id": "",  //音色的 ID，具体教程前往 https://www.coze.cn/open/docs/developer_guides/list_voices 查看
-  "coze_space_id": "",   //空间的 ID
-  // 私聊回复的前缀，用于区分真人
-  "single_chat_prefix": [
-    "bot",
-    "@bot"
-  ],
-  
-  "single_chat_reply_prefix": "[bot] ",
-  // 群组聊天前缀，用于区分真人
-  "group_chat_prefix": [
-    "@bot"
-  ],
-  "group_name_white_list": [
-    "ChatGPT测试群",
-    "ChatGPT测试群2"
-  ],
-  // 语音回复配置
-  "speech_recognition": false,
-  "group_speech_recognition": false,
-  "text_to_voice": "coze",
-  "voice_reply_voice": false,
-  // gewechat 相关配置
-  "gewechat_app_id": "",
-  "gewechat_base_url": "http://0.0.0.0:2531/v2/api",
-  "gewechat_callback_url": "http://0.0.0.0:9919/v2/api/callback/collect",
-  "gewechat_download_url": "http://0.0.0.0:2532/download",
-  "gewechat_token": ""
-}
 
-```
-## 4. 运行
-
-###  本地运行
-```bash
-python3 app.py
-```
-### 服务器部署
-```bash
-# 启动
-nohup python3 app.py & tail -f nohup.out  # 在后台运行程序并通过日志输出二维码
-# 关闭
-pkill -f app.py
-```
 [![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
 
 ## 联系我
