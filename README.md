@@ -73,7 +73,7 @@ pip3 install -r requirements.txt
 
 ```bash
 cd /web
-staremlit run Home.py 
+streamlit run Home.py 
 ```
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
