@@ -57,7 +57,7 @@ docker run -itd -v /root/temp:/root/temp -p 2531:2531 -p 2532:2532 --privileged=
 
 ```bash
 git clone https://github.com/JC0v0/Coze-on-Wechat
-cd Coze-on-wechat/
+cd Coze-on-Wechat/
 ```
 
 **(2) 安装核心依赖 (必选)：**
@@ -112,9 +112,9 @@ cp config-template.json config.json
   "voice_reply_voice": false,
   // gewechat 相关配置
   "gewechat_app_id": "",
-  "gewechat_base_url": "http://0.0.0.0:2531/v2/api",
-  "gewechat_callback_url": "http://0.0.0.0:9919/v2/api/callback/collect",
-  "gewechat_download_url": "http://0.0.0.0:2532/download",
+  "gewechat_base_url": "http://127.0.0.1:2531/v2/api",
+  "gewechat_callback_url": "http://127.0.0.1:9919/v2/api/callback/collect",
+  "gewechat_download_url": "http://127.0.0.1:2532/download",
   "gewechat_token": ""
 }
 
@@ -132,6 +132,13 @@ nohup python3 app.py & tail -f nohup.out  # 在后台运行程序并通过日志
 # 关闭
 pkill -f app.py
 ```
+
+### Web界面
+```bash
+cd Coze-on-Wechat/
+streamlit run Home.py
+```
+
 [![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
 
 ## 联系我
