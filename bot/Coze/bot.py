@@ -113,7 +113,7 @@ class CozeBot(Bot):
                             # 解析卡片信息
                             card_data = json.loads(messages.content)
                             info_str = card_data.get("info_in_card", "")
-                            
+
                             # 解析键值对
                             info_dict = {}
                             for line in info_str.split('\n'):
@@ -126,13 +126,18 @@ class CozeBot(Bot):
                             image = info_dict.get('thumbUrl')
                             desc = info_dict.get('desc')
                         
-                            link_content = {
-                                "title": title,
-                                "desc": desc,
-                                "link_url": url,
-                                "thumb_url": image
-                            }
-                            link_reply = Reply(ReplyType.LINK, link_content)
+                            # 当只有图片字段时，使用ReplyType.IMAGE回复
+                            if 'image' in info_dict:
+                                image_url = info_dict.get("image")
+                                link_reply = Reply(ReplyType.IMAGE_URL, image_url)
+                            else:
+                                link_content = {
+                                    "title": title,
+                                    "desc": desc,
+                                    "link_url": url,
+                                    "thumb_url": image
+                                }
+                                link_reply = Reply(ReplyType.LINK, link_content)
                         except Exception as e:
                             logger.error(f"解析卡片信息失败: {str(e)}")
                             logger.error("原始内容:", messages.content)
