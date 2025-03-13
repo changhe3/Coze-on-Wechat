@@ -25,7 +25,6 @@
 - 语音回复  
 ![image](https://github.com/user-attachments/assets/93625656-e77f-43d4-9cfb-dcdc7bc4abc4)
 
-- 语音示例  
 https://github.com/user-attachments/assets/e221d35b-e6bb-479c-9850-3c5d404511e5
 
 ### 插件功能
