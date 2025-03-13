@@ -68,13 +68,26 @@ docker run -itd -v ./gewechat/data:/root/temp -p 2531:2531 -p 2532:2532 --restar
 git clone https://github.com/JC0v0/Coze-on-Wechat
 cd Coze-on-Wechat/
 ```
+**(2) 创建虚拟环境：**
 
-**(2) 安装核心依赖 (必选)：**
+使用 venv 创建虚拟环境
+```bash
+python3 -m venv Coze-on-Wechat
+source Coze-on-Wechat/bin/activate
+```
+使用 conda 创建虚拟环境
+
+```bash
+conda create -n Coze-on-Wechat python=3.12
+conda activate Coze-on-Wechat
+```
+
+**(3) 安装核心依赖 (必选)：**
 
 ```bash
 pip3 install -r requirements.txt
 ```
-**(3) 配置 config.json：**
+**(4) 配置 config.json：**
 
 ```bash
 cp config.json.example config.json          # 如果你使用web启动，则不需要配置
