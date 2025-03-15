@@ -115,5 +115,10 @@ streamlit run Home.py  # 可以在网页配置 config.json
 ## 📊 项目统计
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
-## 📬 联系方式
-![image](https://github.com/user-attachments/assets/d61764ec-c975-4b34-96c3-96bef668d67a)
+
+
+<div align="center"> <div style="display: flex; justify-content: center; gap: 50px;"> <div> <h4>联系我</h4> <img src="https://github.com/user-attachments/assets/d61764ec-c975-4b34-96c3-96bef668d67a" width="150"> </div>
+  
+<div> <h4>交流群</h4> <img src="https://github.com/user-attachments/assets/32ade468-a053-45b9-bedc-5de85707d478" width="150"> </div> </div>
+
+</div> 
