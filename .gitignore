@@ -7,9 +7,9 @@ __pycache__/
 venv/
 .env
 .DS_Store
+config.json             # 本地配置文件
 
 # 项目特定忽略
-config.json             # 本地配置文件
 *.mp3                   # 语音文件
 *.wav
 *.ogg

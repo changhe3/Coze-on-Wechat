@@ -1,0 +1,32 @@
+services:
+  coze-on-wechat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: coze-on-wechat
+    restart: always
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./config.json:/app/config.json
+
+    depends_on:
+      - gewechat
+    networks:
+      - coze-network
+
+  gewechat:
+    image: registry.cn-chengdu.aliyuncs.com/tu1h/wechotd:alpine
+    container_name: gewechat
+    restart: always
+    ports:
+      - "2531:2531"
+      - "2532:2532"
+    volumes:
+      - ./gewechat/data:/root/temp
+    networks:
+      - coze-network
+
+networks:
+  coze-network:
+    driver: bridge 

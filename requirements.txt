@@ -40,4 +40,3 @@ dingtalk_stream
 zhipuai>=2.0.1
 # tongyi qwen new sdk
 dashscope
-streamlit>=1.40.1

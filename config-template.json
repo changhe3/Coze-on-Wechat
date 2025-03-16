@@ -1,7 +1,7 @@
 {
   "channel_type": "gewechat",
   "model": "coze",
-  "coze_api_base": "YOUR API KEY",
+  "coze_api_base": "https://api.coze.cn",
   "coze_api_key": "YOUR API KEY",
   "coze_bot_id": "",    
   "coze_voice_id": "", 
@@ -27,8 +27,8 @@
   "voice_reply_voice": false,
 
   "gewechat_app_id": "",
-  "gewechat_base_url": "http://0.0.0.0:2531/v2/api",
-  "gewechat_callback_url": "http://0.0.0.0:9919/v2/api/callback/collect",
-  "gewechat_download_url": "http://0.0.0.0:2532/download",
+  "gewechat_base_url": "http://127.0.0.1:2531/v2/api",
+  "gewechat_callback_url": "http://127.0.0.1:9919/v2/api/callback/collect",
+  "gewechat_download_url": "http://127.0.0.1:2532/download",
   "gewechat_token": ""
 }

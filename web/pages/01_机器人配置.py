@@ -176,7 +176,6 @@ try:
             st.text_input("群聊前缀", value=", ".join(config.get("group_chat_prefix", [])), key="group_chat_prefix",help="群聊时包含该前缀则会触发机器人回复")
             st.text_input("群聊白名单", value=", ".join(config.get("group_name_white_list", [])), key="group_name_white_list",help="群聊白名单,请输入群聊名称，多个群聊名称用逗号隔开")
             
-            # 将文本输入改为选择框 - 修复布尔值处理
             no_need_at = config.get("no_need_at", "")
             no_need_at_value = False
             if isinstance(no_need_at, str):
@@ -193,7 +192,6 @@ try:
             st.text_input("群聊时自动回复的前缀", value=config.get("group_chat_reply_prefix", ""), key="group_chat_reply_prefix")
             st.text_input("群聊时自动回复的后缀", value=config.get("group_chat_reply_suffix", ""), key="group_chat_reply_suffix")
             
-            # 将文本输入改为选择框 - 修复布尔值处理
             group_at_off = config.get("group_at_off", "")
             group_at_off_value = False
             if isinstance(group_at_off, str):
@@ -216,7 +214,6 @@ try:
         
         # 语音配置
         with st.expander("语音配置"):
-            # 将文本输入改为选择框 - 修复布尔值处理
             speech_recognition = config.get("speech_recognition", "")
             speech_recognition_value = False
             if isinstance(speech_recognition, str):
@@ -229,7 +226,6 @@ try:
                         key="speech_recognition",
                         help="选择是否开启语音识别功能")
             
-            # 将文本输入改为选择框 - 修复布尔值处理
             group_speech_recognition = config.get("group_speech_recognition", "")
             group_speech_recognition_value = False
             if isinstance(group_speech_recognition, str):
@@ -242,7 +238,6 @@ try:
                         key="group_speech_recognition",
                         help="选择是否开启群组语音识别功能")
             
-            # 将文本输入改为选择框 - 修复布尔值处理
             voice_reply_voice = config.get("voice_reply_voice", "")
             voice_reply_voice_value = False
             if isinstance(voice_reply_voice, str):
@@ -255,7 +250,6 @@ try:
                         key="voice_reply_voice",
                         help="选择是否使用语音回复语音消息")
             
-            # 将文本输入改为选择框 - 修复布尔值处理
             always_reply_voice = config.get("always_reply_voice", "")
             always_reply_voice_value = False
             if isinstance(always_reply_voice, str):
@@ -290,7 +284,6 @@ try:
             config["group_chat_prefix"] = [x.strip() for x in st.session_state.group_chat_prefix.split(",") if x.strip()]
             config["group_name_white_list"] = [x.strip() for x in st.session_state.group_name_white_list.split(",") if x.strip()]
             
-            # 将字符串"True"/"False"转换为布尔值true/false
             config["no_need_at"] = st.session_state.no_need_at.lower() == "true"
             config["group_at_off"] = st.session_state.group_at_off.lower() == "true"
             
@@ -304,7 +297,6 @@ try:
             config["gewechat_callback_url"] = st.session_state.gewechat_callback_url
             config["gewechat_download_url"] = st.session_state.gewechat_download_url
             
-            # 将字符串"true"/"false"转换为布尔值true/false
             config["speech_recognition"] = st.session_state.speech_recognition.lower() == "true"
             config["group_speech_recognition"] = st.session_state.group_speech_recognition.lower() == "true"
             config["voice_reply_voice"] = st.session_state.voice_reply_voice.lower() == "true"

@@ -110,6 +110,28 @@ cd web/
 streamlit run Home.py  # 可以在网页配置 config.json
 ```
 
+### 4. Docker 部署
+
+#### 使用 Docker Compose 一键部署
+
+```bash
+# 克隆项目
+git clone https://github.com/JC0v0/Coze-on-Wechat
+cd Coze-on-Wechat
+
+# 创建必要的目录
+mkdir -p gewechat/data
+cp config-template.json config.json
+# 启动服务
+docker-compose up -d
+```
+
+启动后访问 `http://您的服务器IP:8501` 进入 Web 界面完成配置。
+
+
+
+更多详细的 Docker 部署说明请参考 [Docker 部署指南](DOCKER_DEPLOY.md)。
+
 ---
 
 ## 📊 项目统计
