@@ -268,7 +268,8 @@ try:
         # 其他配置
         with st.expander("其他配置"):
             st.text_input("自动接受好友请求的申请信息", value=config.get("accept_friend_commands", ""), key="accept_friend_commands",help="自动接受好友请求的申请信息",placeholder="自动接受好友请求的申请信息,例如：加好友")
-        
+            st.text_input("自动接受群聊邀请的申请信息", value=config.get("invite_member_commands", ""), key="invite_member_commands",help="自动接受群聊邀请的申请信息",placeholder="自动接受群聊邀请的申请信息,例如：加群")
+            st.text_input("邀请进群的群id", value=config.get("invite_chatroom_id", ""), key="invite_chatroom_id",help="邀请进群的群id",placeholder="邀请进群的群id,例如：123456789@chatroom")
         # 保存按钮 - 使用主要按钮样式
         if st.button("💾 保存配置", type="primary"):
             # 更新配置
