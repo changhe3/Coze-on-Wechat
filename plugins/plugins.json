@@ -4,6 +4,10 @@
             "enabled": true,
             "priority": 999
         },
+        "InviteMember": {
+            "enabled": true,
+            "priority": 999
+        },
         "Hello": {
             "enabled": true,
             "priority": -1
