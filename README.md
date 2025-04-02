@@ -182,7 +182,7 @@ docker-compose up -d
 [![Star History Chart](https://api.star-history.com/svg?repos=JC0v0/Coze-on-Wechat&type=Date)](https://star-history.com/#JC0v0/Coze-on-Wechat&Date)
 
 
-<div align="center"> <div style="display: flex; justify-content: center; gap: 50px;"> <div> <h4>加我进群请备注：Coze-on-Wechat</h4> <img src="https://github.com/user-attachments/assets/d61764ec-c975-4b34-96c3-96bef668d67a" width="150"> </div>
+<div align="center"> <div style="display: flex; justify-content: center; gap: 50px;"> <div> <h4>加我进群请备注：Coze-on-Wechat  进群请留言：进群</h4> <img src="https://github.com/user-attachments/assets/d61764ec-c975-4b34-96c3-96bef668d67a" width="150"> </div>
   
 
 </div> 
