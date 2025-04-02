@@ -4,10 +4,6 @@
             "enabled": true,
             "priority": 999
         },
-        "JinaSum": {
-            "enabled": false,
-            "priority": 10
-        },
         "Hello": {
             "enabled": true,
             "priority": -1
