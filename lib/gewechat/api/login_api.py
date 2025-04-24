@@ -125,7 +125,8 @@ class LoginApi:
         max_retries = 100  # 最大重试100次
         
         while retry_count < max_retries:
-            login_status = self.check_qr(app_id, uuid, "")
+            captch_code=input("检测到可能需要验证码，请查看手机微信并将6位数字验证码输入到这里(如果不需要或扫码未确认，请直接按回车): ")
+            login_status = self.check_qr(app_id, uuid, captch_code)
             if login_status.get('ret') != 200:
                 print_red(f"检查登录状态失败: {login_status}")
                 return app_id, f"检查登录状态失败: {login_status}"
