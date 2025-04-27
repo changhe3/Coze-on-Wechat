@@ -1,5 +1,7 @@
 import requests
-from terminal_printer import print_red
+import traceback
+import io
+from ..util.terminal_printer import print_red, print_yellow
 
 def post_json(base_url, route, token, data):
     headers = {
@@ -21,4 +23,10 @@ def post_json(base_url, route, token, data):
             raise RuntimeError(response.text)
     except Exception as e:
         print_red(e)
-        return e
+        tb = io.StringIO()
+        traceback.print_stack(file=tb)
+        print_yellow(tb.getvalue())
+        return {
+            'ret': 500,
+            'error': e,
+        }

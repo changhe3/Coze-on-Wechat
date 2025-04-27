@@ -38,6 +38,7 @@ class GeWeChatChannel(ChatChannel):
         if not self.token:
             logger.warning("[gewechat] token is not set，trying to get token")
             token_resp = self.client.get_token()
+            # logger.warning(f'[gewechat] token is set: {token_resp}')
             # {'ret': 200, 'msg': '执行成功', 'data': 'tokenxxx'}
             if token_resp.get("ret") != 200:
                 logger.error(f"[gewechat] get token failed: {token_resp}")

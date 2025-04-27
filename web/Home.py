@@ -154,6 +154,7 @@ def start_app():
             process = subprocess.Popen(
                 [sys.executable, app_path],
                 stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
                 bufsize=1,
@@ -183,6 +184,13 @@ def stop_app():
             st.session_state.process = None
             st.session_state.running = False
             st.success("程序已停止")
+
+            # 停止成功后，清空日志文件
+            log_file_path = os.path.join(project_root, "run.log")
+            if os.path.exists(log_file_path):
+                with open(log_file_path, "w", encoding="utf-8") as f:
+                    f.truncate(0)  # 清空文件内容
+                st.info("日志文件已清空")
         except Exception as e:
             st.error(f"停止失败: {str(e)}")
     else:
@@ -329,6 +337,19 @@ with col2:
             # 如果找到二维码图片路径且未登录成功，显示二维码
             if qr_image_path and not login_success:
                 st.markdown("### 登录二维码")
+                user_input = st.text_input("请查看手机微信并将6位数字验证码输入到这里(如果不需要，请直接按确认)", key="user_input_area")
+                if st.button("确认发送", key="send_button"):
+                    if st.session_state.running and st.session_state.process:
+                        try:
+                            # 发送输入到子进程
+                            st.session_state.process.stdin.write(user_input + "\n")
+                            st.session_state.process.stdin.flush()
+                            st.success(f"已发送：{user_input}")
+                        except Exception as e:
+                            st.error(f"发送失败: {str(e)}")
+                    else:
+                        st.warning("程序未运行，无法发送")
+                
                 try:
                     # 检查文件是否存在
                     if os.path.exists(qr_image_path):
