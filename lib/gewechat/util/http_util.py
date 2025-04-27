@@ -1,4 +1,5 @@
 import requests
+from terminal_printer import print_red
 
 def post_json(base_url, route, token, data):
     headers = {
@@ -19,4 +20,5 @@ def post_json(base_url, route, token, data):
         else:
             raise RuntimeError(response.text)
     except Exception as e:
+        print_red(e)
         return e
