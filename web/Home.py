@@ -7,6 +7,10 @@ import json
 import shutil
 from PIL import Image
 
+import streamlit_authenticator as stauth
+import yaml
+
+
 # 使用绝对路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
@@ -125,6 +129,39 @@ if 'process' not in st.session_state:
     st.session_state.process = None
     st.session_state.running = False
     st.session_state.output = []
+    st.session_state.authenticator = None
+
+# 检查用户验证配置，如果存在则要求验证
+auth_path = os.path.join(project_root, "auth.yaml")
+if os.path.isfile(auth_path):
+    with open(auth_path) as f:
+        auth_config = yaml.safe_load(f)
+    
+    st.session_state.authenticator = stauth.Authenticate(
+        auth_config['credentials'],
+        auth_config['cookie']['name'],
+        auth_config['cookie']['key'],
+        auth_config['cookie']['expiry_days']
+    )
+
+auth = st.session_state.authenticator
+if auth:
+    try:
+        auth.login()
+    except Exception as e:
+        st.error(e)
+    
+    auth_status = st.session_state.get('authentication_status')
+    if not auth_status:
+        if auth_status is False:
+            st.error('Authentication Failed')
+        
+        st.stop()
+    else:
+        auth.logout()
+        
+            
+
 
 # 检查配置文件是否存在，如果不存在则创建
 def ensure_config_exists():

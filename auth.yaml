@@ -1,0 +1,11 @@
+cookie:
+  expiry_days: 1
+  key: REPLACE-WITH-RANDOM-STRING  
+  name: coze-on-wechat-auth 
+credentials:
+  usernames:
+    admin: # replace
+      failed_login_attempts: 0
+      logged_in: False
+      password: password # replace
+
